@@ -20,18 +20,18 @@ CTI BLOG, siber tehdit istihbaratı verilerini toplamak, analiz etmek ve profesy
 
     Responsive Design: Mobil ve masaüstü cihazlar için tam uyumlu grid yapısı.
 
--Proje Yapısı
-Plaintext
+##  Proje Yapısı
 
+```text
 .
-├── database/           # Veritabanı bağlantı ve init işlemleri
-├── handlers/           # Route handler fonksiyonları (Admin, Blog, Auth)
-├── middleware/         # AuthRequired kontrolü ve Session yönetimi
-├── models/             # GORM veri modelleri (Post, Comment, User)
-├── static/             # CSS, JS ve Yüklenen Görseller (uploads)
-├── templates/          # HTML şablonları (Go Templates)
-├── main.go             # Uygulama giriş noktası
-└── go.mod              # Bağımlılık yönetimi
+├── database/     # Veritabanı bağlantı ve init işlemleri
+├── handlers/     # Route handler fonksiyonları (Admin, Blog, Auth)
+├── middleware/   # AuthRequired kontrolü ve Session yönetimi
+├── models/       # GORM veri modelleri (Post, Comment, User)
+├── static/       # CSS, JS ve Yüklenen Görseller (uploads)
+├── templates/    # HTML şablonları (Go Templates)
+├── main.go       # Uygulama giriş noktası
+└── go.mod        # Bağımlılık yönetimi
 
 -Kurulum ve Çalıştırma
 Gereksinimler
