@@ -1,7 +1,7 @@
-CTI BLOG - Cyber Threat Intelligence & Analysis Portal
+## CTI BLOG - Cyber Threat Intelligence & Analysis Portal
 
 CTI BLOG, siber tehdit istihbaratı verilerini toplamak, analiz etmek ve profesyonel bir arayüzle sunmak amacıyla geliştirilmiş, Go (Gin Gonic) tabanlı bir içerik yönetim sistemidir. Siber güvenlik analistlerinin bulgularını (OSINT, Malware Analysis, Dark Web Research vb.) dokümante etmeleri için optimize edilmiştir.
---Öne Çıkan Özellikler
+## Öne Çıkan Özellikler
 - Güvenlik Odaklı Mimari
 
     Secure File Upload: Yüklenen görseller için UUID tabanlı isimlendirme, MIME-type doğrulaması ve 5MB dosya boyutu sınırı ile RCE (Remote Code Execution) koruması.
@@ -32,15 +32,15 @@ CTI BLOG, siber tehdit istihbaratı verilerini toplamak, analiz etmek ve profesy
 ├── templates/    # HTML şablonları (Go Templates)
 ├── main.go       # Uygulama giriş noktası
 └── go.mod        # Bağımlılık yönetimi
-
--Kurulum ve Çalıştırma
+```
+## Kurulum ve Çalıştırma
 Gereksinimler
 
     Go 1.20+
 
     SQLite
 
-Adımlar
+## Adımlar
 
     Projeyi klonlayın:
     Bash
