@@ -72,3 +72,6 @@ Gereksinimler
     go run main.go
 
     Tarayıcınızda açın: http://localhost:5050
+## Giriş Bilgileri
+Kullanıcı Adı: admin
+Şifre: blogadmin
