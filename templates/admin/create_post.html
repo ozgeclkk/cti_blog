@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Yeni Blog Oluştur</title>
+</head>
+<body>
+    <nav class="cyber-nav">
+        <a href="/" class="nav-box">ANA SAYFA</a>
+        <a href="/admin/dashboard" class="nav-box">PANELE DÖN</a>
+        <a href="/logout" class="btn-logout">ÇIKIŞ YAP</a>
+    </nav>
+
+    <div class="cyber-container">
+        <div class="login-card" style="max-width: 500px;"> 
+            <h2 class="neon-text">YENİ BLOG</h2>
+            
+            <form action="/admin/create" method="POST">
+                <div class="cyber-input">
+                    <input type="text" name="title" id="title" required placeholder=" ">
+                    <label>Blog Başlığı</label>
+                </div>
+                
+                <div class="cyber-input">
+                    <textarea name="content" id="content" rows="10" required 
+                        placeholder="Blog içeriğini buraya yazın..." 
+                        style="width: 100%; background: transparent; border: 1px solid #444; color: #fff; padding: 10px; border-radius: 5px; outline: none; font-family: inherit;"></textarea>
+                </div>
+                
+                <button type="submit" class="glow-button">YAYINLA</button>
+                
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="/admin/dashboard" style="color: #666; text-decoration: none; font-size: 12px;">← Geri Dön</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

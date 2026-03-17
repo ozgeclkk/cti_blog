@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Sisteme Giriş</title>
+</head>
+<body>
+    <nav class="cyber-nav">
+        <a href="/" class="nav-box">ANA SAYFA</a>
+    </nav>
+
+    <div class="cyber-container">
+        <div class="login-card">
+            <h2 class="neon-text">SİSTEME GİRİŞ</h2>
+            {{ if .hata }}<div class="alert-box">{{ .hata }}</div>{{ end }}
+            <form action="/login" method="POST">
+                <div class="cyber-input">
+                    <input type="text" name="kullaniciadi" required>
+                    <label>Kullanıcı Adı</label>
+                </div>
+                <div class="cyber-input">
+                    <input type="password" name="sifre" required>
+                    <label>Şifre</label>
+                </div>
+                <button type="submit" class="glow-button">GİRİŞ</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

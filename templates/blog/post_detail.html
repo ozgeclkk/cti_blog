@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>{{ .post.Baslik }}</title>
+</head>
+<body>
+    <nav class="cyber-nav">
+        <a href="/" class="nav-box">← ANA SAYFAYA DÖN</a>
+    </nav>
+
+    <div class="container-main" style="max-width: 900px; margin-top: 50px;">
+        <article class="blog-card" style="padding: 0; overflow: hidden; cursor: default;">
+            
+            {{ if .post.ResimYolu }}
+            <div class="detail-image-container" style="width: 100%; max-height: 450px; overflow: hidden; border-bottom: 2px solid var(--ana-mor);">
+                <img src="{{ .post.ResimYolu }}" style="width: 100%; height: auto; display: block;">
+            </div>
+            {{ end }}
+
+            <div style="padding: 40px;">
+                <h1 class="neon-text" style="text-align: left; font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase;">
+                    {{ .post.Baslik }}
+                </h1>
+                
+                <div style="color: #555; margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 15px; display: flex; justify-content: space-between;">
+                    <span>📅 {{ .post.OlusturmaTarihi.Format "02.01.2006" }}</span>
+                    <span style="color: var(--ana-mor);">#CyberIntelligence</span>
+                </div>
+
+                <div style="line-height: 1.8; color: #ccc; font-size: 1.15rem; white-space: pre-line; text-align: justify;">
+                    {{ .post.İcerik }}
+                </div>
+            </div>
+        </article>
+    </div>
+</body>
+</html>

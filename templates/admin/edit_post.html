@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>İçeriği Düzenle</title>
+</head>
+<body>
+    <nav class="cyber-nav">
+        <a href="/admin/dashboard" class="nav-box">PANELE DÖN</a>
+    </nav>
+
+    <div class="cyber-container">
+        <div class="login-card" style="max-width: 600px; width: 100%;">
+            <h2 class="neon-text">İÇERİĞİ GÜNCELLE</h2>
+            <form action="/admin/edit/{{ .post.ID }}" method="POST">
+                <div class="cyber-input">
+                    <input type="text" name="title" value="{{ .post.Baslik }}" required>
+                    <label>Başlık</label>
+                </div>
+                <div class="cyber-input">
+                    <textarea name="content" rows="10" required style="width: 100%; background: transparent; border: 1px solid #333; color: #fff; padding: 10px; border-radius: 5px;">{{ .post.İcerik }}</textarea>
+                </div>
+                <button type="submit" class="glow-button">DEĞİŞİKLİKLERİ KAYDET</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Admin Kontrol Paneli | Cyber Blog</title>
+</head>
+<body>
+    <nav class="cyber-nav">
+        <a href="/" class="nav-box">ANA SAYFA</a>
+        <a href="/logout" class="nav-box" style="border-color: #ff5f56; color: #ff5f56; margin-left: auto;">
+            <span style="opacity: 0.7;">[</span> ÇIKIŞ <span style="opacity: 0.7;">]</span>
+        </a>
+    </nav>
+
+    <div class="container-main">
+        <div class="cyber-container" style="min-height: auto; padding-top: 20px;">
+            <div class="login-card" style="max-width: 650px; width: 100%;">
+                <h2 class="neon-text" style="text-align: center; text-transform: uppercase;">Yeni İçerik Oluştur</h2>
+                
+                <form action="/admin/create" method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
+                    <div class="cyber-input">
+                        <input type="text" name="title" id="title" required placeholder="İçerik Başlığı">
+                    </div>
+
+                    <div class="cyber-input" style="border: 2px dashed rgba(108, 92, 231, 0.4); border-radius: 8px; padding: 20px; text-align: center; background: rgba(108, 92, 231, 0.03); cursor: pointer; transition: 0.3s; margin-bottom: 25px;"
+                         onclick="document.getElementById('image').click();">
+                        <input type="file" name="image" id="image" accept="image/*" style="display: none;" 
+                               onchange="document.getElementById('file-name').innerText = this.files[0].name;">
+                        
+                        <span style="font-size: 2rem; color: var(--ana-mor); display: block; margin-bottom: 10px;">📂</span>
+                        <span style="color: #888; font-size: 0.9rem; display: block;">Kapak Görseli Seç</span>
+                        <small id="file-name" style="color: var(--ana-mor); display: block; margin-top: 8px; font-style: italic;"></small>
+                    </div>
+
+                    <div class="cyber-input">
+                        <textarea name="content" id="content" rows="6" required placeholder="Blog içeriğini buraya yazın..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="glow-button">SİSTEME YÜKLE</button>
+                </form>
+            </div>
+        </div>
+
+        <hr style="border: 1px solid #222; margin: 40px 0;">
+
+        <h2 class="neon-text" style="font-size: 1.2rem;">MEVCUT YAZILARIN</h2>
+        <div class="admin-blog-list">
+            {{ range .posts }}
+            <div class="admin-blog-item" style="border-left: 4px solid var(--ana-mor); margin-bottom: 20px; background: #0d0d0f; padding: 15px; border-radius: 8px;">
+                <div style="padding: 10px;">
+                    <h3 style="color: var(--ana-mor); margin-top: 0; font-size: 1.2rem;">{{ .Baslik }}</h3>
+                    
+                    <p style="color: #888; font-size: 0.9rem; line-height: 1.4; margin: 10px 0;">
+                        {{ printf "%.100s" .İcerik }}...
+                    </p>
+                    
+                    <div style="display: flex; gap: 15px; align-items: center; margin-top: 15px; border-top: 1px solid #222; padding-top: 10px;">
+                        <small style="color: #444;">{{ .OlusturmaTarihi.Format "02.01.2006" }}</small>
+                        
+                        <a href="/admin/edit/{{ .ID }}" class="nav-box" style="font-size: 11px; padding: 4px 12px;">DÜZENLE</a>
+                        
+                        <form action="/admin/delete/{{ .ID }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn-logout" style="font-size: 11px; padding: 4px 12px; cursor: pointer; border-radius: 4px;">SİL</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {{ else }}
+            <p style="text-align: center; color: #555; margin-top: 30px;">Henüz hiçbir içerik üretilmedi.</p>
+            {{ end }}
+        </div>
+    </div>
+</body>
+</html>

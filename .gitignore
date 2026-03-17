@@ -1,0 +1,17 @@
+*.db
+*.db-journal
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+main
+blog_proje
+static/image/*
+!static/image/.gitkeep
+vendor/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.env

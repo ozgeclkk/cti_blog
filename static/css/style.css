@@ -1,0 +1,212 @@
+/* --- TEMEL AYARLAR --- */
+:root {
+    --ana-mor: #6c5ce7;
+    --acik-mor: #a29bfe;
+    --koyu-bg: #0a0a0c;
+    --kart-bg: #121214;
+    --yazi-rengi: #d1d1d1;
+}
+
+body {
+    background-color: var(--koyu-bg);
+    color: var(--yazi-rengi);
+    font-family: 'Consolas', 'Monaco', monospace;
+    margin: 0;
+    padding: 0; /* Navigasyonun tam oturması için sıfırladık */
+}
+
+/* --- NAVİGASYON: SAĞ ÜST VE KÜÇÜK --- */
+.cyber-nav {
+    display: flex;
+    justify-content: flex-end; /* Sağ köşeye yaslar */
+    gap: 15px;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(108, 92, 231, 0.1);
+}
+
+.nav-box {
+    border: 1px solid var(--ana-mor);
+    padding: 6px 15px; /* Daha küçük ve zarif butonlar */
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--acik-mor);
+    background: rgba(108, 92, 231, 0.05);
+    font-weight: bold;
+    transition: 0.3s all;
+    text-transform: uppercase;
+    font-size: 11px; /* Font küçültüldü */
+    letter-spacing: 1px;
+}
+
+.nav-box:hover {
+    background: var(--ana-mor);
+    color: white;
+    box-shadow: 0 0 12px rgba(108, 92, 231, 0.4);
+}
+
+/* --- İÇERİK ALANI --- */
+.container-main {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- ANA SAYFA: BLOG KARTLARI --- */
+.neon-text {
+    color: var(--ana-mor);
+    text-align: center;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(108, 92, 231, 0.6);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.blog-card {
+    background: var(--kart-bg);
+    border: 1px solid rgba(108, 92, 231, 0.3);
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.blog-card:hover {
+    border-color: var(--ana-mor);
+    box-shadow: 0 0 25px rgba(108, 92, 231, 0.2);
+}
+
+/* --- ADMİN PANEL: SAĞ ÜSTTEKİ YENİ BLOG BUTONU --- */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+}
+
+.btn-admin-action {
+    background: var(--ana-mor);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* --- GİRİŞ VE BLOG OLUŞTURMA FORMLARI --- */
+.cyber-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.login-card {
+    background: var(--kart-bg);
+    border: 1px solid var(--ana-mor);
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 30px rgba(108, 92, 231, 0.2);
+}
+
+.cyber-input {
+    position: relative;
+    margin: 30px 0;
+}
+
+.cyber-input input, .cyber-input textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #333;
+    color: #fff;
+    padding: 10px 0;
+    outline: none;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.cyber-input textarea {
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cyber-input input:focus, .cyber-input textarea:focus {
+    border-color: var(--ana-mor);
+}
+
+.glow-button {
+    width: 100%;
+    padding: 15px;
+    background: var(--ana-mor);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.glow-button:hover {
+    background: var(--acik-mor);
+    box-shadow: 0 0 20px rgba(108, 92, 231, 0.5);
+}
+
+/* --- TABLO / LİSTE AYARLARI --- */
+.cyber-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cyber-table td {
+    padding: 15px;
+    border-bottom: 1px solid #222;
+}
+
+.btn-mini-delete {
+    background: transparent;
+    color: #ff5f56;
+    border: 1px solid #ff5f56;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+}
+.blog-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-edit {
+    color: var(--acik-mor);
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid var(--ana-mor);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.btn-edit:hover {
+    background: var(--ana-mor);
+    color: white;
+}
+.blog-card p, .admin-blog-item p {
+    white-space: pre-line; /* Satır başlarını korur, metinler birbirine yapışmaz */
+    word-wrap: break-word; /* Uzun kelimeleri böler, tasarımı bozmaz */
+}

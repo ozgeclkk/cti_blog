@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>CTI BLOG | Siber İstihbarat Portalı</title>
+</head>
+<body>
+    <nav class="cyber-nav">
+        <a href="/" class="nav-box">ANA SAYFA</a>
+        <a href="/login" class="nav-box">ADMİN GİRİŞİ</a>
+        <a href="/admin/dashboard" class="nav-box">ADMİN PANELİ</a>
+</nav>
+    </nav>
+
+    <header class="hero-section" style="text-align: center; padding: 60px 20px; background: radial-gradient(circle, rgba(108, 92, 231, 0.1) 0%, rgba(0,0,0,0) 70%);">
+        <h1 class="neon-text" style="font-size: 4rem; letter-spacing: 15px; margin: 0; text-transform: uppercase;">
+            CTI BLOG
+        </h1>
+        <p style="color: #555; letter-spacing: 5px; margin-top: 10px; font-size: 0.9rem;">CYBER THREAT INTELLIGENCE PORTAL</p>
+        <div style="width: 100px; height: 2px; background: var(--ana-mor); margin: 20px auto; box-shadow: 0 0 10px var(--ana-mor);"></div>
+    </header>
+
+    <div class="container-main">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
+            <h2 class="neon-text" style="font-size: 1.4rem; margin: 0; letter-spacing: 3px;">
+                [ YAZILAR ]
+            </h2>
+            <div style="flex-grow: 1; height: 1px; background: linear-gradient(to right, #222, transparent);"></div>
+        </div>
+        
+        <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+            {{ range .posts }}
+            <div class="blog-card" style="cursor: pointer;" onclick="location.href='/post/{{ .ID }}'">
+                
+                {{ if .ResimYolu }}
+                <div class="blog-image-container">
+                    <img src="{{ .ResimYolu }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #222;">
+                </div>
+                {{ end }}
+
+                <h2 class="neon-text" style="text-align: left; font-size: 1.5rem; margin-top: 0;">{{ .Baslik }}</h2>
+                
+                <p style="line-height: 1.6; color: #bbb; height: 80px; overflow: hidden;">
+                    {{ printf "%.120s" .İcerik }}...
+                </p>
+                
+                <div style="margin-top: 15px; border-top: 1px solid #222; padding-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                    <small style="color: var(--ana-mor);">Devamını Oku →</small>
+                    <small style="color: #333; font-size: 0.7rem;">{{ .OlusturmaTarihi.Format "02.01.2006" }}</small>
+                </div>
+            </div>
+            {{ else }}
+            <p style="text-align: center; color: #555; margin-top: 50px;">Henüz paylaşılan bir gönderi yok.</p>
+            {{ end }}
+        </div>
+    </div>
+</body>
+</html>
