@@ -1,8 +1,16 @@
 ## CTI BLOG - Cyber Threat Intelligence & Analysis Portal
+<img width="1837" height="883" alt="resim" src="https://github.com/user-attachments/assets/0455b0e7-b5aa-409c-bfb9-0fc501612d2e" />
+
 
 CTI BLOG, siber tehdit istihbaratı verilerini toplamak, analiz etmek ve profesyonel bir arayüzle sunmak amacıyla geliştirilmiş, Go (Gin Gonic) tabanlı bir içerik yönetim sistemidir. Siber güvenlik analistlerinin bulgularını (OSINT, Malware Analysis, Dark Web Research vb.) dokümante etmeleri için optimize edilmiştir.
 ## Öne Çıkan Özellikler
+<img width="967" height="607" alt="resim" src="https://github.com/user-attachments/assets/e1b61b7d-7eef-4810-bd5e-eb49e92146e0" />
+<img width="1837" height="889" alt="resim" src="https://github.com/user-attachments/assets/c14c2868-5ce0-476a-9d02-2008bd89be65" />
+
+
 - Güvenlik Odaklı Mimari
+
+
 
     Secure File Upload: Yüklenen görseller için UUID tabanlı isimlendirme, MIME-type doğrulaması ve 5MB dosya boyutu sınırı ile RCE (Remote Code Execution) koruması.
 
@@ -11,6 +19,11 @@ CTI BLOG, siber tehdit istihbaratı verilerini toplamak, analiz etmek ve profesy
     Input Sanitization: Veritabanı etkileşimlerinde GORM (ORM) kullanılarak SQL Injection risklerine karşı önlem.
 
 -Teknik Özellikler
+<img width="1284" height="681" alt="resim" src="https://github.com/user-attachments/assets/03809849-a722-474e-94f4-1516e183ca74" />
+
+<img width="952" height="727" alt="resim" src="https://github.com/user-attachments/assets/98094fa7-c7f0-40af-89d1-e290850ab3e0" />
+
+
 
     Full CRUD Ops: Blog yazıları için oluşturma, okuma, güncelleme ve silme desteği.
 
