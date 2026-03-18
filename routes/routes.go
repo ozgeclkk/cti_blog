@@ -3,7 +3,7 @@ package routes
 import (
 	"blog/handlers"
 	"blog/middleware"
-	"net/http" // Yönlendirmeler için gerekli
+	"net/http" 
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
@@ -11,15 +11,15 @@ import (
 )
 
 func SetupRoutes(r *gin.Engine) {
-	// 1. Oturum Ayarları
+	//Oturum Ayarları
 	store := cookie.NewStore([]byte("gizli-anahtar"))
 	r.Use(sessions.Sessions("mysession", store))
 
-	// 2. Dosya Yüklemeleri (Sadece burada kalsın, main.go'dan sil!)
+	
 	r.Static("/static", "./static")
 	r.LoadHTMLGlob("templates/**/*")
 
-	// --- HERKESE AÇIK ---
+	// Herkese açık
 	r.GET("/", handlers.GetPosts)
 	r.GET("/login", handlers.ShowLogin)
 	r.POST("/login", handlers.HandleLogin)
@@ -28,17 +28,17 @@ func SetupRoutes(r *gin.Engine) {
 	// Çıkış Yapma Rotası
 	r.GET("/logout", func(c *gin.Context) {
 		session := sessions.Default(c)
-		session.Clear() // Tüm session verilerini siler (kullanici_id dahil)
-		session.Save()  // Değişikliği kaydet
+		session.Clear() 
+		session.Save()  
 
-		// Çıkış yaptıktan sonra ana sayfaya gönder
+		
 		c.Redirect(http.StatusFound, "/")
 	})
-	// --- ADMİN PANELİ (Giriş Şart) ---
+	// Admin paneli
 	admin := r.Group("/admin")
 	admin.Use(middleware.AuthRequired)
 	{
-		// Burası artık hem formu hem listeyi gösteren handlers.ShowDashboard'a gidiyor
+		
 		admin.GET("/dashboard", handlers.ShowDashboard)
 
 		// Formu gösterme ve kaydetme
